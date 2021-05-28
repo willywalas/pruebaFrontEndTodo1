@@ -1,0 +1,59 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Producto</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">
+                        Descripción:
+                    </label>
+                    <input [(ngModel)]="producto.descripcion" name="descripcion" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        Imagen:
+                    </label>
+                    <input [(ngModel)]="producto.imagen" name="imagen" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        Nombre:
+                    </label>
+                    <input [(ngModel)]="producto.nombre" name="nombre" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        Precio:
+                    </label>
+                    <input [(ngModel)]="producto.precio" name="precio" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        Stock:
+                    </label>
+                    <input [(ngModel)]="producto.stock" name="stock" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        Tipo de Producto:
+                    </label>
+                    <select [(ngModel)]="producto.tipoProducto" name="tipoProducto" class="form-select form-control">
+                        <option *ngFor="let tipoProducto of tipoProductos" [value]="tipoProducto.id">
+                            {{tipoProducto.nombre}}
+                        </option>
+                    </select>
+                </div>
+                <button (click)="guardarProducto(producto)" class="btn btn-info">
+                    Guardar
+                </button>
+                <button (click)="listar()" class="btn btn-info">
+                    Salir
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

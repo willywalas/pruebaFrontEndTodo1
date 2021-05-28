@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card mb-3" style="max-width: 1100px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{producto.imagen}}" class="img-fluid img-thumbnail" alt="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <p class="card-text">{{producto.descripcion}}</p>
+              <p class="card-text">Precio: S/ {{producto.precio}}</p>
+              <form action="">
+                <div class="form-group">
+                    <label for="">
+                        Cantidad:
+                    </label>
+                    <input [(ngModel)]="producto.precio" name="precio" type="hidden">
+                    <input [(ngModel)]="producto.nombre" name="nombre" type="hidden">
+                    <input [(ngModel)]="producto.id" name="nombre" type="hidden">
+                    <input [(ngModel)]="producto.stock" name="stock" type="number" class="form-control w-50">
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button (click)="realizarVenta(producto)" class="btn btn-primary">
+                            Guardar
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button (click)="home()"  class="btn btn-primary">
+                            Salir
+                        </button>
+                    </div>
+                </div>
+                
+                
+                </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+</div>
