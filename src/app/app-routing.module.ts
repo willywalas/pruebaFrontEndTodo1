@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './access/login/login.component';
+import { AgregarCuentaLoginComponent } from './agregar-cuenta-login/agregar-cuenta-login.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { HomeComponent } from './home/home.component';
 import { ListarCamisetasComponent } from './listar-camisetas/listar-camisetas.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'comics',component:ListarCamisetasComponent},
   {path:'juguetes',component:ListarCamisetasComponent},
   {path:'accesorios',component:ListarCamisetasComponent},
+  {path:'nuevaCuenta',component:AgregarCuentaLoginComponent},
   {path:'',component:HomeComponent}
   
   

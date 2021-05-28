@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'pruebaWilliamsSamaniego';
-
+  nombre = sessionStorage.getItem('nombre');
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
   constructor(private router:Router){
 
   }
@@ -51,5 +52,15 @@ export class AppComponent {
   home(){
     this.router.navigate([""]);
     console.log("click al botom")
+  }
+
+  singOut(){
+    sessionStorage.clear();
+
+    this.router.navigateByUrl('', { skipLocationChange: false }).then(() => {
+      this.router.navigate(['']);
+      window.location.reload();
+    });
+    
   }
 }

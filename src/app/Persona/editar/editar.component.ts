@@ -10,6 +10,16 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class EditarComponent implements OnInit {
   persona: Persona = new Persona;
+  tipoUsuarios=[
+    {
+      "tipo": "admin",
+      "value": "admin"
+  },
+  {
+    "tipo": "cliente",
+    "value": "cliente"
+}
+  ]
   constructor(private router:Router,private service:ServiceService) { }
 
   ngOnInit(): void {

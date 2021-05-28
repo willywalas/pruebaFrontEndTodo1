@@ -6,14 +6,15 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <a type="button" class="navbar-brand" (click)="home()">Hulk Store</a>
-        <li><a type="button" class="nav-link px-2 link-secondary" (click)="listarCamisetas()">Camisetas</a></li>
-        <li><a type="button" class="nav-link px-2 link-dark" (click)="listarVasos()">Vasos</a></li>
-        <li><a type="button" class="nav-link px-2 link-dark" (click)="listarComics()">Comics</a></li>
-        <li><a type="button" class="nav-link px-2 link-dark" (click)="listarJuguetes()">Juguetes</a></li>
-        <li><a type="button" class="nav-link px-2 link-dark" (click)="listarAccesorios()">Accesorios</a></li>
-        <li><a type="button" class="nav-link px-2 link-dark" (click)="Listar()">Mantenimiento de Personas</a></li>
-        <li><a type="button" (click)="listarProductos()" class="nav-link px-2 link-dark">Mantenimiento de Productos</a></li>
+        <a *ngIf="tipoUsuario == 'cliente' || tipoUsuario ==null" type="button" class="navbar-brand" (click)="home()">Hulk Store</a>
+        <a *ngIf="tipoUsuario == 'admin'" type="button" class="navbar-brand">KARDEX</a>
+        <li *ngIf="tipoUsuario == 'cliente' || tipoUsuario ==null"><a type="button" class="nav-link px-2 link-secondary" (click)="listarCamisetas()">Camisetas</a></li>
+        <li *ngIf="tipoUsuario == 'cliente' || tipoUsuario ==null"><a type="button" class="nav-link px-2 link-dark" (click)="listarVasos()">Vasos</a></li>
+        <li *ngIf="tipoUsuario == 'cliente' || tipoUsuario ==null"><a type="button" class="nav-link px-2 link-dark" (click)="listarComics()">Comics</a></li>
+        <li *ngIf="tipoUsuario == 'cliente' || tipoUsuario ==null"><a type="button" class="nav-link px-2 link-dark" (click)="listarJuguetes()">Juguetes</a></li>
+        <li *ngIf="tipoUsuario == 'cliente' || tipoUsuario ==null"><a type="button" class="nav-link px-2 link-dark" (click)="listarAccesorios()">Accesorios</a></li>
+        <li *ngIf="tipoUsuario == 'admin'"><a type="button" class="nav-link px-2 link-dark" (click)="Listar()">Mantenimiento de Personas</a></li>
+        <li *ngIf="tipoUsuario == 'admin'"><a type="button" (click)="listarProductos()" class="nav-link px-2 link-dark">Mantenimiento de Productos</a></li>
       </ul>
   
       <div class="dropdown text-end">
@@ -21,9 +22,10 @@
           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" (click)="login()">Sign In</a></li>
+          <li>{{nombre}}</li>
+          <li *ngIf="tipoUsuario == null"><a class="dropdown-item" (click)="login()">Sign In</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item">Sign Out</a></li>
+          <li><a class="dropdown-item" (click)="singOut()">Sign Out</a></li>
         </ul>
       </div>
     </div>

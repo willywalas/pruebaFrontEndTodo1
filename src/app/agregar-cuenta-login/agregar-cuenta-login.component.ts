@@ -4,11 +4,11 @@ import { Persona } from 'src/app/Modelo/Persona';
 import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
-  selector: 'app-agregar',
-  templateUrl: './agregar.component.html',
-  styleUrls: ['./agregar.component.css']
+  selector: 'app-agregar-cuenta-login',
+  templateUrl: './agregar-cuenta-login.component.html',
+  styleUrls: ['./agregar-cuenta-login.component.css']
 })
-export class AgregarComponent implements OnInit {
+export class AgregarCuentaLoginComponent implements OnInit {
   persona: Persona = new Persona;
   tipoUsuarios=[
     {
@@ -27,18 +27,18 @@ export class AgregarComponent implements OnInit {
 
   guardarPersona(persona:Persona){
     console.log(persona.usuario)
+    this.persona.tipoUsuario='cliente'
     this.service.createPersona(persona)
     .subscribe(data=>{
       alert("Se Agrego con éxito.... !!!");
-      this.router.navigate(["listar"]);
+      this.router.navigate(["login"]);
     })
 
   }
 
   listar(){
     
-    this.router.navigate(["listar"]);
-    console.log("click al botom")
+    this.router.navigate([""]);
   
 }
 

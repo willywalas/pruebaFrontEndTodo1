@@ -62,4 +62,8 @@ export class ServiceService {
     return this.http.get<TipoProducto[]>(this.Url+"/tipoProducto");
   }
 
+  login(persona:Persona){
+    return this.http.post<Persona>(this.Url+"/persona/login",persona);
+  }
+
 }

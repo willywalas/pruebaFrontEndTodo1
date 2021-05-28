@@ -27,7 +27,12 @@
                     <label for="">
                         Tipo de Usuario:
                     </label>
-                    <input [(ngModel)]="persona.tipoUsuario" name="tipoUsuario" type="text" class="form-control">
+                    <select [(ngModel)]="persona.tipoUsuario" name="tipoUsuario" class="form-select form-control">
+                        <option *ngFor="let tipoUsuario of tipoUsuarios" [value]="tipoUsuario.value">
+                            {{tipoUsuario.tipo}}
+                        </option>
+                    </select>
+                
                 </div>
                 <button (click)="guardarPersona(persona)" class="btn btn-info">
                     Guardar
